@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Naoki Uehara</author>
+ <class>mainwindow</class>
+ <widget class="QMainWindow" name="mainwindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>802</width>
+    <height>481</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>802</width>
+    <height>481</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>elsnam editor</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <widget class="QGroupBox" name="gbReg">
+      <property name="title">
+       <string>割り当て</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="4" column="0">
+        <widget class="QLabel" name="lbMIDIFile">
+         <property name="text">
+          <string>MIDIファイル</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QPushButton" name="btnFolderOpen">
+         <property name="text">
+          <string>開く</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="lbFolderPath">
+         <property name="text">
+          <string>フォルダの場所</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QLineEdit" name="tbBankFileName">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLineEdit" name="tbMIDIFileName">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="lbBankFile">
+         <property name="text">
+          <string>バルクファイルの名前</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="4">
+        <widget class="QPushButton" name="btnMIDIUpload">
+         <property name="text">
+          <string>アップロード</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="4">
+        <widget class="QPushButton" name="btnBankUpload">
+         <property name="text">
+          <string>アップロード</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="lbName">
+         <property name="text">
+          <string>エレクトーン上の名前</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLineEdit" name="tbNameOnElectone">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLineEdit" name="tbFolderName">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0" rowspan="2">
+     <widget class="QListView" name="lvFolder">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QGroupBox" name="gbMIDI">
+      <property name="title">
+       <string>パート</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="6" column="2">
+        <widget class="QCheckBox" name="cbLead">
+         <property name="text">
+          <string>リードボイス(通常はOFF)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QCheckBox" name="cbLower">
+         <property name="text">
+          <string>下鍵盤</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QCheckBox" name="cbUpper">
+         <property name="text">
+          <string>上鍵盤</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="btnExLead">
+         <property name="text">
+          <string>リードボイス以外ON</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QCheckBox" name="cbFoot">
+         <property name="text">
+          <string>足鍵盤</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="btnAllOn">
+         <property name="text">
+          <string>全てON(通常は使わない)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="btnAllOff">
+         <property name="text">
+          <string>全てOFF</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QCheckBox" name="cbKBP">
+         <property name="text">
+          <string>キーボードパーカッション</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2">
+        <widget class="QCheckBox" name="cbControl">
+         <property name="text">
+          <string>コントロール</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QCheckBox" name="cbXG">
+         <property name="text">
+          <string>XG</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>802</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_F">
+    <property name="title">
+     <string>ファイル(&amp;F)</string>
+    </property>
+    <addaction name="actOpen"/>
+    <addaction name="actSave"/>
+    <addaction name="actClose"/>
+   </widget>
+   <addaction name="menu_F"/>
+  </widget>
+  <action name="actClose">
+   <property name="text">
+    <string>閉じる</string>
+   </property>
+  </action>
+  <action name="actSave">
+   <property name="text">
+    <string>保存</string>
+   </property>
+  </action>
+  <action name="actOpen">
+   <property name="text">
+    <string>ELS_SONG.NAMを開く</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>tbNameOnElectone</tabstop>
+  <tabstop>tbFolderName</tabstop>
+  <tabstop>btnFolderOpen</tabstop>
+  <tabstop>tbBankFileName</tabstop>
+  <tabstop>btnBankUpload</tabstop>
+  <tabstop>tbMIDIFileName</tabstop>
+  <tabstop>lvFolder</tabstop>
+  <tabstop>btnMIDIUpload</tabstop>
+  <tabstop>btnExLead</tabstop>
+  <tabstop>btnAllOn</tabstop>
+  <tabstop>btnAllOff</tabstop>
+  <tabstop>cbUpper</tabstop>
+  <tabstop>cbLower</tabstop>
+  <tabstop>cbLead</tabstop>
+  <tabstop>cbFoot</tabstop>
+  <tabstop>cbKBP</tabstop>
+  <tabstop>cbControl</tabstop>
+  <tabstop>cbXG</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
