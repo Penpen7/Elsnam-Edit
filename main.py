@@ -36,13 +36,14 @@ class main(Ui_mainwindow):
     def lvFolder_SelectionChanged(self):
         if not self.isopened:
             return
-        self.setting.setValue(self.selectedid, registory.part["UK"], self.cbUpper.isChecked())
-        self.setting.setValue(self.selectedid, registory.part["LK"], self.cbLower.isChecked())
-        self.setting.setValue(self.selectedid, registory.part["PK"], self.cbFoot.isChecked())
-        self.setting.setValue(self.selectedid, registory.part["XG"], self.cbXG.isChecked())
-        self.setting.setValue(self.selectedid, registory.part["KBP"], self.cbKBP.isChecked())
-        self.setting.setValue(self.selectedid, registory.part["LEAD"], self.cbLead.isChecked())
-        self.setting.setValue(self.selectedid, registory.part["CTRL"], self.cbControl.isChecked())
+        if not (self.selectedid is None):
+            self.setting.setValue(self.selectedid, registory.part["UK"], self.cbUpper.isChecked())
+            self.setting.setValue(self.selectedid, registory.part["LK"], self.cbLower.isChecked())
+            self.setting.setValue(self.selectedid, registory.part["PK"], self.cbFoot.isChecked())
+            self.setting.setValue(self.selectedid, registory.part["XG"], self.cbXG.isChecked())
+            self.setting.setValue(self.selectedid, registory.part["KBP"], self.cbKBP.isChecked())
+            self.setting.setValue(self.selectedid, registory.part["LEAD"], self.cbLead.isChecked())
+            self.setting.setValue(self.selectedid, registory.part["CTRL"], self.cbControl.isChecked())
         self.selectedid = list(self.setting.reg.keys())[self.lvFolder.selectedIndexes()[0].row()]
         self.displayreg(self.setting.reg[self.selectedid],self.selectedid)
 
@@ -66,6 +67,7 @@ class main(Ui_mainwindow):
             return
         self.setting = registory(nampath)
         self.isopened = True
+        self.selectedid = None
 
         listModel = QtGui.QStandardItemModel(self.lvFolder)
         for i in self.setting.reg.values():
@@ -89,7 +91,7 @@ class main(Ui_mainwindow):
             elif sys.platform == 'linux2':
                     subprocess.check_call(['xdg-open', '--', path])
             elif sys.platform == 'win32':
-                    subprocess.check_call(['explorer', path])
+                    subprocess.run('explorer {}'.format(path))
 
         except:
             QtWidgets.QMessageBox.warning(self.mainwindow, "Error", "フォルダを開けませんでした.")
